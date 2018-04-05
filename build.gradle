@@ -10,6 +10,18 @@ repositories {
     mavenCentral()
 }
 
+jar {
+    archiveName = "DI.jar"
+
+    manifest {
+        attributes "Main-Class": "uj.jwzp.w4.launcher.SpringMain"
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
 sourceCompatibility = 1.8
 
 dependencies {

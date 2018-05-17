@@ -8,7 +8,7 @@ Wstrzykiwanie zależności do konstruktora - String
 
 Or
 
-1. Run jar file with one parameter: "file name" ex
+1. Run jar file with one parameter: "file name", for example:
     
 ```
 java -jar DI.jar movies.txt

@@ -14,14 +14,8 @@ public class SpringMain {
     private static final String DEFAULT_FILE_NAME = "movies.txt";
 
     public static void main(String[] args) {
-        /**/
-        String fileName = "";
-        if(args.length > 0){
-            fileName = args[0];
-        }else {
-         fileName=DEFAULT_FILE_NAME;
-        }
-        /**/
+
+        final String fileName = args.length > 0 ? args[0] : DEFAULT_FILE_NAME ;
         AnnotationConfigApplicationContext configApplicationContext = new AnnotationConfigApplicationContext();
         String finalFileName = fileName;
         configApplicationContext.registerBean(CSVMovieFinder.class, () -> new CSVMovieFinder(finalFileName));
